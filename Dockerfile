@@ -17,6 +17,8 @@ RUN set -xe \
 EXPOSE 1025
 EXPOSE 1080
 
+VOLUME /home/data
+
 USER 1001
 
 CMD ["mailcatcher", "--no-quit", "--foreground", "--ip=0.0.0.0"]
