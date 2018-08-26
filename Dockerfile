@@ -1,8 +1,8 @@
 FROM ruby:2.4-alpine3.6
 
 LABEL 	maintainer="Andrzej Golawski <andipansa@gmail.com>" \
-	io.k8s.description MailCatcher For OpenShift \
- 	io.openshift.non-scalable true 
+	io.k8s.description="MailCatcher For OpenShift" \
+ 	io.openshift.non-scalable=true 
 
 RUN set -xe \
     && apk add --no-cache \
