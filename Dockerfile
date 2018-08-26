@@ -1,6 +1,8 @@
 FROM ruby:2.4-alpine3.6
 
-LABEL maintainer="Andrzej Golawski <andipansa@gmail.com>"
+LABEL 	maintainer="Andrzej Golawski <andipansa@gmail.com>" \
+	io.k8s.description MailCatcher For OpenShift \
+ 	io.openshift.non-scalable true 
 
 RUN set -xe \
     && apk add --no-cache \
@@ -12,10 +14,7 @@ RUN set -xe \
     && gem install mailcatcher -v 0.6.5 --no-ri --no-rdoc \
     && apk del .build-deps
 
-# smtp port
 EXPOSE 1025
-
-# webserver port
 EXPOSE 1080
 
 USER 1001
